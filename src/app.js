@@ -196,7 +196,7 @@ io.of("/stream").on("connection", stream);
 
 // server.listen( 3000 );
 // route(app);
-const port = process.env.PORT || 9000;
+const port = process.env.PORT;
 server.listen(port, () => {
   console.log(`Connection at http://localhost:${port}`);
 });
