@@ -38,16 +38,16 @@
       <div class="custom-modal-content">
         <div class="row text-center">
           <div class="col-md-6 mb-2">
-            <button class="btn btn-primary record-option" id="record-video">Record video</button>
+            <span class="record-option" id="record-video">Record video</span>
           </div>
           <div class="col-md-6 mb-2">
-            <button class="btn btn-success record-option" id="record-screen">Record screen</button>
+            <span class="record-option" id="record-screen">Record screen</span>
           </div>
         </div>
 
         <div class="row mt-3">
           <div class="col-md-12 text-center">
-            <button class="btn btn-danger" id="closeModal">
+            <button class="btn btn-outline-danger" id="closeModal">
               Close
             </button>
           </div>
@@ -56,12 +56,12 @@
     </div>
 
     <nav class="navbar fixed-top bg-info rounded-0 d-print-none">
-      <div class="text-white">VideoCall  <span> <a href="/homepage"><i class="fas fa-home" style="color: #fff;"></i></a></span>  <span> <a href="/logout"><i class="fas fa-home" style="color: #fff;"></i></a></span></div>
-    
+      <div class="text-white">Video Call</div>
+
       <div class="pull-right room-comm" hidden>
-        <!-- <span class="text-white mr-5">
+        <span class="text-white mr-5">
           Unique Identifier: <span id="randomNumber"></span>
-        </span> -->
+        </span>
 
         <button
           class="btn btn-sm rounded-0 btn-no-effect"
@@ -115,54 +115,79 @@
         </button>
       </div>
     </nav>
-    
- 
 
-    <div class="container-fluid " id="room-create" hidden>
+    <div class="container-fluid" id="room-create" hidden>
       <div class="row">
-        <div class="col-12 h2 mt-5 text-center h2-text">Create Room</div>
+        <div class="col-12 h2 mt-5 text-center">Create Room</div>
       </div>
-<form action="/oks" method="post" name = "form-sub">
-  
-      <div class="row mt-2 form-tt form_login" > 
+
+      <div class="row mt-2">
         <div class="col-12 text-center">
           <span class="form-text small text-danger" id="err-msg"></span>
         </div>
 
-       
+        <div class="col-12 col-md-4 offset-md-4 mb-3">
           <label for="room-name">Room Name</label>
           <input
-          name="name_room"
             type="text"
             id="room-name"
             class="form-control rounded-0"
             placeholder="Room Name"
           />
-        
+        </div>
 
-        
+        <div class="col-12 col-md-4 offset-md-4 mb-3">
           <label for="your-name">ID</label>
           <input
-          name="id_room"
             type="text"
             id="your-name"
             class="form-control rounded-0"
             placeholder="ID"
           />
-        
+        </div>
 
-       
-          <button id="create-room" class="btn btn-success" style = "margin-left: 80px;" >
+        <div class="col-12 col-md-4 offset-md-4 mb-3">
+          <button id="create-room" class="btn btn-block rounded-0 btn-info">
             Create Room
           </button>
-       
-      </form>
-       
+        </div>
+
+        <div class="col-12 col-md-4 offset-md-4 mb-3" id="room-created"></div>
       </div>
-      <div class="col-12 col-md-4 offset-md-4 mb-3" id="room-created"></div>
     </div>
 
-    
+    <div class="container-fluid" id="username-set" hidden>
+      <form name="delete-form" method="POST" action=""></form>
+
+      <div class="row">
+        <div class="col-12 h4 mt-5 text-center">Your Name</div>
+      </div>
+
+      <div class="row mt-2">
+        <div class="col-12 text-center">
+          <span
+            class="form-text small text-danger"
+            id="err-msg-username"
+          ></span>
+        </div>
+
+        <div class="col-12 col-md-4 offset-md-4 mb-3">
+          <label for="username">Your Name</label>
+          <input
+            type="text"
+            id="username"
+            class="form-control rounded-0"
+            placeholder="Your Name"
+          />
+        </div>
+
+        <div class="col-12 col-md-4 offset-md-4 mb-3">
+          <button id="enter-room" class="btn btn-block rounded-0 btn-info">
+            Enter Room
+          </button>
+        </div>
+      </div>
+    </div>
 
     <div class="container-fluid room-comm" hidden>
       <div class="row">
